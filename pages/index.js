@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main >
-      <h1 className="text">Hello World</h1>
+      <h1 className="text-[4rem]">Hello World</h1>
       </main>
 
       <footer >
