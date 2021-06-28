@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-9fWspiVLr/edit)
+- Solution URL: [https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-solution-nextjstailwind-YYmSLrOeN](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-solution-nextjstailwind-YYmSLrOeN)
 - Live Site URL: [https://countries-details-next-tailwind-jamstack.vercel.app/](https://countries-details-next-tailwind-jamstack.vercel.app/)
 
 
