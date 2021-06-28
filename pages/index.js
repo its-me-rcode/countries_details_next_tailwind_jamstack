@@ -1,18 +1,28 @@
 import Head from "next/head";
-import all from "../data/all.json";
 import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  // const data = all.map((array) => {
-  //  return array.flag;
-  // })
-  // console.log(data)
+  const [AllCountries, setAllCountries] = useState(null);
+
+  useEffect(() => {
+    const AllCountries = async () => {
+      const data = await (
+        await axios.get("https://restcountries.eu/rest/v2/all")
+      ).data;
+      setAllCountries(data);
+    };
+    AllCountries();
+  }, []);
+
+  // console.log(AllCountries);
 
   return (
     <>
       <div
-        className={`bg-[#fafafa] bg-opacity-100  text-[#111517] dark:text-[#ffffff]`}
+        className={`bg-[#fafafa] dark:bg-[#202c37] bg-opacity-100  text-[#111517] dark:text-[#ffffff]`}
       >
         <Head>
           <title>Where In The World</title>
@@ -20,13 +30,14 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main>
+        <>
+          
           <Header />
 
-          <CountryCard all={all} />
+          <CountryCard AllCountries={AllCountries} />
 
           {/* {all.map((array) => (<h1 key={array.name} className="text-[4rem] ">{array.name}</h1>))} */}
-        </main>
+        </>
 
         <footer></footer>
       </div>

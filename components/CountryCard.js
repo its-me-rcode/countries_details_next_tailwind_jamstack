@@ -2,16 +2,18 @@ import Image from "next/image";
 import { useRouter } from 'next/router'
 import React from "react";
 
-const CountryCard = ({ all }) => {
+const CountryCard = ({ AllCountries }) => {
   const router = useRouter()
   return (
-    <div className="  antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
+    <div className="  antialiased my-3 z-50  text-[#111517] dark:text-[#ffffff]">
       <div className="container sm:mx-auto grid sm:grid-cols-4   justify-center items-center  ">
-        {all.map((country) => (
+        {AllCountries?.map((country) => (
           <div
-            className="bg-[#ffffff] bg-opacity-100 w-[18rem] shadow-md rounded-lg mb-14 sm:m-3 cursor-pointer  "
+            className="bg-[#ffffff] dark:bg-[#2b3945] bg-opacity-100 w-[18rem] shadow-md rounded-lg mb-14 sm:m-3 cursor-pointer  "
             key={country.name}
-            onClick={() => router.push(`./countryDetails/${country.alpha3Code}`)}
+            onClick={() =>
+              router.push(`./countryDetails/${country.alpha3Code}`)
+            }
           >
             <Image
               src={country.flag}

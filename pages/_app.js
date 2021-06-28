@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   };
   
   return (
-    <div className={`${dark ? "dark" : ""}`}>
+    <div className={`${dark ? "dark" : ""} bg-[#fafafa] dark:bg-[#202c37]`}>
       <Navbar switchTheme={switchTheme} />
       <Component {...pageProps} />
     </div>
