@@ -9,7 +9,7 @@ const Details = () => {
     const { code } = router.query;
     
     return (
-      <div className="sm:max-w-[1440px] antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
+      <div className=" antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
         <div className="container sm:mx-auto">
           <div className="bg-white shadow-lg cursor-pointer filter drop-shadow-sm px-5 ml-8 mt-10 py-2 w-[8rem] flex justify-between rounded-md">
             <svg

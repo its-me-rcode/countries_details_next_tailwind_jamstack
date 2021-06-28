@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ switchTheme }) => {
   return (
-    <div className="  sm:max-w-[1440px] bg-[#ffffff] sticky top-0 bg-opacity-100 z-50 shadow-md antialiased text-[#111517] dark:text-[#ffffff]">
+    <div className="  bg-[#ffffff] sticky top-0 bg-opacity-100 z-50 shadow-md antialiased text-[#111517] dark:text-[#ffffff]">
       <div className="container mx-auto flex justify-between items-center h-24 sm:h-16 m">
         <div className="">
           <h1 className="text-md sm:text-2xl font-bold ml-3">

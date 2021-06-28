@@ -17,7 +17,7 @@ const Header = () => {
     // console.log(selected)
 
   return (
-    <div className=" sm:max-w-[1440px] antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
+    <div className="  antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
       <div className="container mx-auto sm:flex sm:justify-between items-center">
         <div className=" bg-[#FFF]  rounded-lg text-gray-500 flex flex-shrink items-center p-2 mx-4 sm:mx-1 my-7 w-[90vw]  shadow-md   sm:w-[28vw] sm:p-2">
           <svg

@@ -5,7 +5,7 @@ import React from "react";
 const CountryCard = ({ all }) => {
   const router = useRouter()
   return (
-    <div className=" sm:max-w-[1440px] antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
+    <div className="  antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
       <div className="container sm:mx-auto grid sm:grid-cols-4   justify-center items-center  ">
         {all.map((country) => (
           <div
