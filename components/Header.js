@@ -17,9 +17,9 @@ const Header = () => {
     // console.log(selected)
 
   return (
-    <div className="max-w-[375px] sm:max-w-[1440px] antialiased my-3 z-50">
+    <div className=" sm:max-w-[1440px] antialiased my-3 z-50 text-[#111517] dark:text-[#ffffff]">
       <div className="container mx-auto sm:flex sm:justify-between items-center">
-        <div className=" bg-[#FFF]  rounded-sm text-gray-500 flex flex-shrink items-center p-2 mx-4 sm:mx-1 my-3 w-[90vw]  shadow-md   sm:w-[28vw] sm:p-2">
+        <div className=" bg-[#FFF]  rounded-lg text-gray-500 flex flex-shrink items-center p-2 mx-4 sm:mx-1 my-7 w-[90vw]  shadow-md   sm:w-[28vw] sm:p-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-6 text-gray-500 ml-3"
@@ -45,7 +45,7 @@ const Header = () => {
         <div className=" w-52 sm:w-72 mx-4 sm:mx-1 my-12 sm:my-4 ">
           <Listbox value={selected} onChange={setSelected}>
             <div className="relative mt-1 ">
-              <Listbox.Button className="relative w-full  py-[1.15rem] pl-3 pr-10 text-left bg-white  rounded-sm shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+              <Listbox.Button className="relative w-full  py-[1.15rem] pl-3 pr-10 text-left bg-white  rounded-lg shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                 <span className="block truncate">{selected.name}</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <SelectorIcon
@@ -60,7 +60,7 @@ const Header = () => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white bg-opacity-100 z-50  rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white bg-opacity-100 z-50  rounded-lg shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                   {people.map((person, personIdx) => (
                     <Listbox.Option
                       key={personIdx}

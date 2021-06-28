@@ -1,10 +1,21 @@
 import "../styles/globals.scss";
 import "tailwindcss/tailwind.css";
+import Navbar from "../components/Navbar";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  const value = "red";
+  const [dark, setDark] = useState(false);
 
-  return <Component {...pageProps} />;
+  const switchTheme = () => {
+    setDark(!dark);
+  };
+  
+  return (
+    <div className={`${dark ? "dark" : ""}`}>
+      <Navbar switchTheme={switchTheme} />
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;
