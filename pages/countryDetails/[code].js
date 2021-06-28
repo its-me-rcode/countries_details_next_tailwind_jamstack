@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-
 import axios from "axios";
 
 const Details = () => {
@@ -56,7 +55,7 @@ const Details = () => {
     <div className="bg-[#fafafa] dark:bg-[#202c37] h-screen  antialiased my-3 pt-9 mt-[-40px] z-50 text-[#111517] dark:text-[#ffffff]">
       <div className="container sm:mx-auto bg-[#fafafa]  dark:bg-[#202c37]">
         <div
-          className="bg-white dark:bg-[#202c37] shadow-lg cursor-pointer filter drop-shadow-sm px-5 ml-8 mt-10 py-2 w-[8rem] flex justify-between rounded-md "
+          className="bg-white dark:bg-[#2b3945] shadow-lg cursor-pointer filter drop-shadow-sm px-5 ml-8 mt-10 py-2 w-[8rem] flex justify-between rounded-md "
           onClick={() => router.push(`/`)}
         >
           <svg
@@ -77,7 +76,7 @@ const Details = () => {
         </div>
         <div className="antialiased sm:grid sm:grid-cols-6">
           <div className="col-span-2">
-            <div className="flex justify-center items-center mt-20 ">
+            <div className="flex justify-center items-center mt-20 shadow-inner drop-shadow-2xl ">
               <Image
                 src={
                   selectedCountry !== null

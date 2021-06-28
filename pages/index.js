@@ -3,19 +3,97 @@ import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Fuse from "fuse.js";
 
 export default function Home() {
   const [AllCountries, setAllCountries] = useState(null);
+  const [dataALl, setdataAll] = useState(null);
 
+  const people = [
+    { id: 1, name: "All", unavailable: false },
+    { id: 2, name: "Africa", unavailable: false },
+    { id: 3, name: "Americas", unavailable: false },
+    { id: 4, name: "Asia", unavailable: false },
+    { id: 5, name: "Europe", unavailable: false },
+    { id: 6, name: "Oceania", unavailable: false },
+  ];
+
+  const [selected, setSelected] = useState(people[0]);
+  
+  // console.log(selected.name);
   useEffect(() => {
     const AllCountries = async () => {
-      const data = await (
+       const data = await (
         await axios.get("https://restcountries.eu/rest/v2/all")
       ).data;
-      setAllCountries(data);
+
+      setdataAll(data)
+
+      const africa = await (
+        await axios.get("https://restcountries.eu/rest/v2/region/africa")
+      ).data;
+
+      const americas = await (
+        await axios.get("https://restcountries.eu/rest/v2/region/americas")
+      ).data;
+
+      const asia = await (
+        await axios.get("https://restcountries.eu/rest/v2/region/asia")
+      ).data;
+
+      const europe = await (
+        await axios.get("https://restcountries.eu/rest/v2/region/europe")
+      ).data;
+
+      const oceania = await (
+        await axios.get("https://restcountries.eu/rest/v2/region/oceania")
+      ).data;
+
+      if (selected.name === "All") {
+        setAllCountries(data);
+      }
+
+      if (selected.name === "Africa") {
+        setAllCountries(africa);
+      }
+      if (selected.name === "Americas") {
+        setAllCountries(americas);
+      }
+      if (selected.name === "Asia") {
+        setAllCountries(asia);
+      }
+      if (selected.name === "Europe") {
+        setAllCountries(europe);
+      }
+      if (selected.name === "Oceania") {
+        setAllCountries(oceania);
+      }
     };
     AllCountries();
-  }, []);
+  }, [selected.name]);
+
+  // search functionality
+
+
+  const searchData = (pattern) => {
+    console.log(pattern);
+    if (pattern === "") {
+      setAllCountries(dataALl);
+      return;
+    }
+    
+    const fuse = new Fuse(AllCountries, {
+      keys: ["name", "alpha3Code"],
+      threshold: 0.8,
+    });
+    const result = fuse.search(pattern);
+    const matches = [];
+
+    result.forEach(({ item }) => {
+      matches.push(item);
+    });
+    setAllCountries(matches);
+  };
 
   // console.log(AllCountries);
 
@@ -31,8 +109,11 @@ export default function Home() {
         </Head>
 
         <>
-          
-          <Header />
+          <Header
+            selected={selected}
+            setSelected={setSelected}
+            searchData={searchData}
+          />
 
           <CountryCard AllCountries={AllCountries} />
 

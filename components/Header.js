@@ -3,16 +3,17 @@ import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
-const Header = () => {
+const Header = ({ selected, setSelected, searchData }) => {
   const people = [
-    { id: 1, name: "Durward Reynolds", unavailable: false },
-    { id: 2, name: "Kenton Towne", unavailable: false },
-    { id: 3, name: "Therese Wunsch", unavailable: false },
-    { id: 4, name: "Benedict Kessler", unavailable: true },
-    { id: 5, name: "Katelyn Rohan", unavailable: false },
+    { id: 1, name: "All", unavailable: false },
+    { id: 2, name: "Africa", unavailable: false },
+    { id: 3, name: "Americas", unavailable: false },
+    { id: 4, name: "Asia", unavailable: false },
+    { id: 5, name: "Europe", unavailable: false },
+    { id: 6, name: "Oceania", unavailable: false },
   ];
 
-  const [selected, setSelected] = useState(people[0]);
+  // const [selected, setSelected] = useState(people[0]);
 
   // console.log(selected)
 
@@ -40,6 +41,7 @@ const Header = () => {
             name=""
             id=""
             placeholder="Search for a country ..."
+            onChange={(e) => searchData(e.target.value)}
           />
         </div>
         <div className=" w-52 sm:w-72 mx-4 sm:mx-1 my-12 sm:my-4 ">
